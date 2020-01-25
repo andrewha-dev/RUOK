@@ -17,10 +17,12 @@ export default function GeneralProfile() {
   const [lastName, setLastName] = useState(user.lastName || '');
   const [bio, setBio] = useState(user.bio || '');
   const [profilePic, setProfilePic] = useState(user.profilePic || '');
+  const [team, setTeam] = useState(user.team || '');
   const [firstNameEdited, setFirstNameEdited] = useState(false);
   const [lastNameEdited, setLastNameEdited] = useState(false);
   const [bioEdited, setBioEdited] = useState(false);
   const [profilePicEdited, setProfilePicEdited] = useState(false);
+  const [teamEdited, setTeamEdited] = useState(false);
 
 
   const resetState = () => {
@@ -28,15 +30,17 @@ export default function GeneralProfile() {
     setLastName(user.lastName || '');
     setBio(user.bio || '');
     setProfilePic(user.profilePic || '');
+    setTeam(user.team || '');
     setFirstNameEdited(false);
     setLastNameEdited(false);
     setBioEdited(false);
     setProfilePicEdited(false);
+    setTeamEdited(false);
   };
 
   useEffect(() => {
     resetState();
-  }, [user.firstName, user.lastName, user.bio, user.profilePic]);
+  }, [user.firstName, user.lastName, user.bio, user.profilePic, user.team]);
 
   const updateFirstName = e => {
     if (validateName(e.target.value)) {
@@ -62,6 +66,11 @@ export default function GeneralProfile() {
     setProfilePicEdited(true);
   };
 
+  const updateTeam = e => {
+    setTeam(e.target.value);
+    setTeamEdited(true);
+  };
+
   const refresh = () => dispatch(attemptGetUser())
     .then(resetState)
     .catch(R.identity);
@@ -73,7 +82,7 @@ export default function GeneralProfile() {
     if (lastNameEdited) { updatedUser.last_name = lastName; }
     if (profilePicEdited) { updatedUser.profile_pic = profilePic; }
     if (bioEdited) { updatedUser.bio = bio; }
-
+    if (teamEdited) { updatedUser.team = team; }
     if (!R.isEmpty(updatedUser)) {
       dispatch(attemptUpdateUser(updatedUser))
         .catch(R.identity);
@@ -159,26 +168,24 @@ export default function GeneralProfile() {
             </div>
           </div>
 
-          <div className="field">
-            <label htmlFor="bio" className="label">
-              Bio
+          <div className="">
+            <div className="field">
+            <label htmlFor="team" className="label">
+              Team
             </label>
             <p className="control">
-              <textarea
-                id="bio"
-                className="textarea"
-                placeholder="Tell us about yourself."
-                value={bio}
-                maxLength={240}
-                onChange={updateBio}
+              <input
+                id="team"
+                className="input"
+                type="text"
+                placeholder="Team"
+                value={team}
+                onChange={updateTeam}
               />
             </p>
-            <p className="help">
-              {`Characters remaining: ${charactersRemaining}`}
-            </p>
           </div>
-
         </div>
+      </div>
       </div>
       <hr className="separator" />
       <button type="button" className="button is-success" disabled={!edited} onClick={save}>

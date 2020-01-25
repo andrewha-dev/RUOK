@@ -43,7 +43,7 @@ export default function Main({ location }) {
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/home" component={HomePage} />
-          <Route path="/todo" component={TodoPage} />
+          <Route path="/surveyHistory" component={TodoPage} />
           <Route path="/settings" component={SettingsPage} />
           <Route path="*" component={LostPage} />
         </Switch>
