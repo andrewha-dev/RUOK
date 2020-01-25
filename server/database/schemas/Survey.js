@@ -14,6 +14,6 @@ surveySchema.methods.hide = function() {
     return R.omit(['__v'], this.toObject());
 };
 
-const Todo = mongoose.model('Survey', surveySchema);
+const Survey = mongoose.model('Survey', surveySchema);
 
-module.exports = Todo;
+module.exports = Survey;
