@@ -7,7 +7,7 @@ const router = express.Router();
 module.exports = router;
 
 router.post('/register', (req, res) => {
-  if (!req || !req.body || !req.body.username || !req.body.password || !req.body.team) {
+  if (!req || !req.body || !req.body.username || !req.body.password) {
     res.status(400).send({ message: 'Username and Password required' });
   }
 
