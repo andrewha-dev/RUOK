@@ -14,7 +14,11 @@ const userSchema = new Schema({
   first_name: { type: String, maxlength: 20 },
   last_name: { type: String, maxlength: 20 },
   bio: { type: String, maxlength: 240 },
+<<<<<<< HEAD
   team: { type: String, maxlength: 255, required: false},
+=======
+  team: { type: String, maxlength: 255},
+>>>>>>> 109b772b88b735fc14c3d5f4759bd5681c969b42
   isAdmin: { type: Boolean, default: false},
   created_at: { type: Date, default: Date.now, immutable: true },
   updated_at: { type: Date },
