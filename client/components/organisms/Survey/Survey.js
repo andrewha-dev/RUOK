@@ -1,24 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import { useDispatch } from 'react-redux';
-import * as R from 'ramda';
 
-import { attemptLogout } from '_thunks/auth';
-
-export default function Survey({pathname}) {
-  const dispatch = useDispatch();  const logout = () =>
-    dispatch(attemptLogout())
-      .catch(R.identity);
-
+export default function Survey() {
 
   return (
     <div>
-      <p>This is where I display the survey</p>
+      <p>This is where I display the survey!!!!</p>
+      <span>So here is where we have all the to get the questions and submit</span>
     </div>)
 }
-
-Survey.propTypes = {
-  pathname: PropTypes.string.isRequired,
-};

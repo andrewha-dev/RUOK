@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
-import { Survey } from '../../organisms/Survey/index'
+import Survey from '../../organisms/Survey/index'
 import * as R from 'ramda';
 
 export default function HomePage() {
