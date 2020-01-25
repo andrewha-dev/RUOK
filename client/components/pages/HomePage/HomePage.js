@@ -19,7 +19,10 @@ export default function HomePage() {
       return <p>Here is a survey</p>
     }
     else {
-      return <p>No survey here</p>
+      return (
+        <div>
+          <p>Info about burn out</p>
+        </div>)
     }
   }
 

@@ -90,7 +90,7 @@ export default function GeneralProfile() {
   };
 
   const charactersRemaining = 240 - bio.length;
-  const edited = firstNameEdited || lastNameEdited || bioEdited || profilePicEdited;
+  const edited = firstNameEdited || lastNameEdited || bioEdited || profilePicEdited || teamEdited;
 
   return (
     <Box className="general-profile">
