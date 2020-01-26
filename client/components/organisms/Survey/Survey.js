@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {getQuestions} from '../../../api/surveys'
+import { getQuestions, submitSurvey } from '../../../api/surveys'
 import * as R from 'ramda';
 import './survey.css'
 export default function Survey() {
@@ -21,7 +21,7 @@ export default function Survey() {
       }
 
       
-    })
+    });
 
     return () => isSubscribed = false;
 
@@ -32,40 +32,40 @@ export default function Survey() {
   const setOne = () => {
     surveyResults.push({question: questions['question'][iterator], value : 1});
     setIterator(iterator + 1);
-  }
+  };
 
   const setTwo = () => {
     surveyResults.push({question: questions['question'][iterator], value : 2});
     setIterator(iterator + 1);
-  }
+  };
 
   const setThree = () => {
     surveyResults.push({question: questions['question'][iterator], value : 3});
     setIterator(iterator + 1);
-  }
+  };
 
   const setFour = () => {
     surveyResults.push({question: questions['question'][iterator], value : 4});
     setIterator(iterator + 1);
-  }
+  };
 
   const setFive = () => {
     surveyResults.push({question: questions['question'][iterator], value : 5});
     setIterator(iterator + 1);
-  }
+  };
 
   const submitForm = () => {
-    let payLoad = {answers: surveyResults, userInfo: user}
-    console.log(payLoad);
-  }
+    let payLoad = {answers: surveyResults, identity: user};
+    submitSurvey(payLoad);
+  };
 
   const DisplayInfo = () => {
     if (iterator < questions['question'].length)
     return (    <p className="displayer">{iterator} out of {questions['question'].length} questions completed</p>
-    )
+    );
     else
     return (<button className="button" onClick={submitForm}>Submit Survey</button>)
-  }
+  };
 
   const SingleQuestion = () => {
     if (iterator < questions['question'].length) {
@@ -125,7 +125,7 @@ export default function Survey() {
 
       </div> )
     
-  }
+  };
 
   const SurveyLoader = () => {
     if (loadingQuestions) {
@@ -141,7 +141,7 @@ export default function Survey() {
         </div>
        
         )
-  }
+  };
 
   return (
     <div>

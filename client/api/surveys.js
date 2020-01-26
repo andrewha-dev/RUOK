@@ -8,5 +8,9 @@ export const getQuestions = () =>
 
 
 export const submitSurvey = (payLoad) => {
-    
-}
+    request.post('/api/survey/')
+        .send(payLoad)
+        .set('Accept', 'application/json')
+        .then(handleSuccess)
+        .catch(handleError);
+};
