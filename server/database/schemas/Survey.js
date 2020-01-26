@@ -5,23 +5,23 @@ const immutablePlugin = require('mongoose-immutable');
 const { Schema } = mongoose;
 
 const surveySchema = new Schema({
-    question: { type: String },
+    question: { type: String }
 });
 
-surveySchema.plugin(MongooseAutoIncrementID.plugin, {
-    modelName: 'Survey',
-    field: 'survey',
-    incrementBy: 1,
-    startAt: 1,
-    unique: true,
-    nextCount: false,
-    resetCount: false,
-});
+// surveySchema.plugin(MongooseAutoIncrementID.plugin, {
+//     modelName: 'Survey',
+//     field: 'survey',
+//     incrementBy: 1,
+//     startAt: 1,
+//     unique: false,
+//     nextCount: false,
+//     resetCount: false,
+// });
 
-surveySchema.plugin(immutablePlugin);
+// surveySchema.plugin(immutablePlugin);
 
 surveySchema.methods.hide = function() {
-    return R.omit(['__v'], this.toObject());
+    return R.omit(['__v', 'survey'], this.toObject());
 };
 
 const Survey = mongoose.model('Survey', surveySchema);

@@ -8,7 +8,7 @@ const router = express.Router();
 module.exports = router;
 
 router.get("/", requireAuth, (req, res) => {
-    Survey.find({}, (err, questions) => {
+    Survey.find().distinct('question', (err, questions) => {
         if(err) {
             res.status(400).send({message: "No questions found"});
         }
