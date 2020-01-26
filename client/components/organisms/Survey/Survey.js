@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';//copu
 import { getQuestions, submitSurvey } from '../../../api/surveys'
 import * as R from 'ramda';
 import './survey.css'
 export default function Survey() {
   const dispatch = useDispatch();
-  const { user } = useSelector(R.pick(['user']));
+  const { user } = useSelector(R.pick(['user']));//
   //Lets retrieve all of the questions from our API now
   const [questions, setQuestions] = useState({});
   const [loadingQuestions, setLoaded] = useState(true);
