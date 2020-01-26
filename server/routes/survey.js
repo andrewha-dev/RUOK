@@ -1,6 +1,7 @@
 const express = require("express");
 const { requireAuth } = require('./middleware');
-const { Survey, Answer } = require('../database/schemas');
+const { Survey } = require('../database/schemas');
+const { Answer } = require('../database/schemas');
 
 const router = express.Router();
 

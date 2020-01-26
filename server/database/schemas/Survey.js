@@ -1,11 +1,21 @@
 const R = require('ramda');
 const mongoose = require('mongoose');
+const { MongooseAutoIncrementID } = require('mongoose-auto-increment-reworked');
 const immutablePlugin = require('mongoose-immutable');
-
 const { Schema } = mongoose;
 
 const surveySchema = new Schema({
     question: { type: String },
+});
+
+surveySchema.plugin(MongooseAutoIncrementID.plugin, {
+    modelName: 'Survey',
+    field: 'survey',
+    incrementBy: 1,
+    startAt: 1,
+    unique: true,
+    nextCount: false,
+    resetCount: false,
 });
 
 surveySchema.plugin(immutablePlugin);
