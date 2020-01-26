@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
     user4.password = "password4";
 
     const answer0 = new answerModel();
+
     answer0.identity = "Andrew";
     answer0.points = 420;
     answer0.added_on = Date.now();
@@ -57,6 +58,7 @@ router.get('/', (req, res) => {
     const answer4 = new answerModel();
     answer4.identity = "\"Kevin\"";
     answer4.points = 0;
+
     answer4.added_on = Date.now();
 
     user0.hashPassword().then(() => {

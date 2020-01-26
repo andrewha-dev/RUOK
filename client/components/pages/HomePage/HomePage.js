@@ -12,6 +12,7 @@ export default function HomePage() {
   const { user } = useSelector(R.pick(['user']));
   const [surveyAvailable, setSurveyAvailable] = useState(true);
   const [answers, setAnswers] = useState([]);
+
   useEffect(() => {
     if (R.isEmpty(user)) {
       dispatch(push('/login'));
@@ -50,7 +51,6 @@ if(user.isAdmin){
   }
 
 
-
   const Display = () => {
     if (surveyAvailable) {
       return <Survey/>
@@ -69,6 +69,7 @@ if(user.isAdmin){
         <div className="container">
           <h1 className="title is-1">
             <Wrapper/>
+
           </h1>
         </div>
       </div>
