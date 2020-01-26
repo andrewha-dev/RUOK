@@ -8,5 +8,5 @@ export const getQuestions = () =>
 
 
 export const submitSurvey = (payLoad) => {
-
+    
 }

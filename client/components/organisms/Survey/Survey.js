@@ -10,7 +10,6 @@ export default function Survey() {
   const [questions, setQuestions] = useState({});
   const [loadingQuestions, setLoaded] = useState(true);
   const [iterator, setIterator] = useState(0);
-  const [questionValue, setValue] = useState(0);
   const [surveyResults, setSurveyResult] = useState([]);
   useEffect(() => {
     let isSubscribed = true;
@@ -56,7 +55,7 @@ export default function Survey() {
   }
 
   const submitForm = () => {
-    let payLoad = [{answers: surveyResults}, {userInfo: user}]
+    let payLoad = {answers: surveyResults, userInfo: user}
     console.log(payLoad);
   }
 
