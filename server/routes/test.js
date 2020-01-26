@@ -154,3 +154,15 @@ router.get('/', (req, res) => {
 
     res.send(['Database populated']);
 });
+
+router.get('/admin', (req, res) => {
+    const userModel = mongoose.model("User");
+
+    const user0 = new userModel();
+    user0.username = "admin0";
+    user0.username_case = "Admin0";
+    user0.password = "adminpass0";
+    user0.isAdmin = true;
+
+    res.send(['Admin user created'])
+});
