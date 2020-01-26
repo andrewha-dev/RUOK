@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
-import Survey from '../../organisms/Survey/index'
-import Tips from '../../organisms/Tips/Tips'
+import Survey from '../../organisms/Survey/index';
+import Tips from '../../organisms/Tips/Tips';
 import * as R from 'ramda';
-import {getResults} from '../../../api/answer'
+import {getResults} from '../../../api/answer';
+import './HomePage.css';
 import { get } from 'mongoose';
 
 export default function HomePage() {
@@ -18,25 +19,23 @@ export default function HomePage() {
       dispatch(push('/login'));
     }
 
-    getResults().then(res=>{
-      console.log("Coming from res", res)
-      console.log(res["question"]);
+    getResults().then( res => {
       setAnswers(res["question"])
     });
   }, []);
 
   const HR=()=>{
-    let test = [];
-
-
-    console.log("Answers: inside Hr ", answers);
+    console.log(answers);
     return (<div>
-            {answers.forEach(val => {
-              <p>{val.identity}</p>
+          <table>
+            <tr><td><strong>Name</strong>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;<strong>Stress Level (15 to 75)</strong></td></tr>
+            {answers.map(ans => {
+              return(<tr><td>{ans.identity}&nbsp;&nbsp;</td><td>&nbsp;&nbsp;{ans.points}</td></tr>)
             })}
+          </table>
       </div>
       )
-  }
+  };
 console.log(user);
 const Wrapper=()=>{
 
