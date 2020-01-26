@@ -8,7 +8,7 @@ import * as R from 'ramda';
 export default function HomePage() {
   const dispatch = useDispatch();
   const { user } = useSelector(R.pick(['user']));
-  const [surveyAvailable, setSurveyAvailable] = useState(false);
+  const [surveyAvailable, setSurveyAvailable] = useState(true);
   useEffect(() => {
     if (R.isEmpty(user)) {
       dispatch(push('/login'));

@@ -1,10 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import * as R from 'ramda';
 
 export default function Survey() {
+  const dispatch = useDispatch();
+  //Lets retrieve all of the questions from our API now
 
   return (
     <div>
-      <p>This is where I display the survey!!!!</p>
-      <span>So here is where we have all the to get the questions and submit</span>
+            
     </div>)
 }
