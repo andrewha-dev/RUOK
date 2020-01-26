@@ -22,7 +22,7 @@ export default function HomePage() {
     else {
       return (
         <div>
-          <p>Info about burn out</p>
+          <p>Infoaa about burn out</p>
         </div>)
     }
   }
