@@ -1,0 +1,19 @@
+.headerSurvey {
+    font-size: 0.5em;
+}
+
+.questionText {
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.leSurvey {
+    font-size: 0.50em;
+    text-align: center;
+    margin-bottom: 1%;
+    min-width: 20em;
+}
+
+.displayer {
+    text-align: center;
+}
