@@ -61,40 +61,20 @@ router.get('/', (req, res) => {
 
     user0.hashPassword().then(() => {
         user0.save((err, savedUser) => {
-            if (err || !savedUser) {
-                res.status(400).send({ message: 'Create user failed', err });
-            } else {
-                res.send({ message: 'User created successfully', user: savedUser.hidePassword() });
-            }
+
         });
     });
     user1.hashPassword().then(() => user1.save((err, savedUser) => {
-        if (err || !savedUser) {
-            res.status(400).send({ message: 'Create user failed', err });
-        } else {
-            res.send({ message: 'User created successfully', user: savedUser.hidePassword() });
-        }
+
     }));
     user2.hashPassword().then(() => user2.save((err, savedUser) => {
-        if (err || !savedUser) {
-            res.status(400).send({ message: 'Create user failed', err });
-        } else {
-            res.send({ message: 'User created successfully', user: savedUser.hidePassword() });
-        }
+
     }));
     user3.hashPassword().then(() => user3.save((err, savedUser) => {
-        if (err || !savedUser) {
-            res.status(400).send({ message: 'Create user failed', err });
-        } else {
-            res.send({ message: 'User created successfully', user: savedUser.hidePassword() });
-        }
+
     }));
     user4.hashPassword().then(() => user4.save((err, savedUser) => {
-        if (err || !savedUser) {
-            res.status(400).send({ message: 'Create user failed', err });
-        } else {
-            res.send({ message: 'User created successfully', user: savedUser.hidePassword() });
-        }
+
     }));
 
     answer0.save();
@@ -153,4 +133,20 @@ router.get('/', (req, res) => {
     survey14.save();
 
     res.send(['Database populated']);
+});
+
+router.get('/admin', (req, res) => {
+    const userModel = mongoose.model("User");
+
+    const user0 = new userModel();
+    user0.username = "admin0";
+    user0.username_case = "Admin0";
+    user0.password = "adminpass0";
+    user0.isAdmin = true;
+
+    user0.hashPassword().then(() => user0.save((err, savedUser) => {
+
+    }));
+
+    res.send(['Admin user created'])
 });

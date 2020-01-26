@@ -1,12 +1,12 @@
 const express = require("express");
-const { requireAuth } = require('./middleware');
+const { checkAdminAccess } = require('./middleware');
 const { Answer } = require('../database/schemas');
 
 const router = express.Router();
 
 module.exports = router;
 
-router.get("/", requireAuth, (req, res) => {
+router.get("/", checkAdminAccess, (req, res) => {
     Answer.find({}, (err, questions) => {
         if(err) {
             res.status(400).send({message: "No answers found"});
