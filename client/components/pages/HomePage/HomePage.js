@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
 import Survey from '../../organisms/Survey/index'
+import Tips from '../../organisms/Tips/Tips'
 import * as R from 'ramda';
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const { user } = useSelector(R.pick(['user']));
-  const [surveyAvailable, setSurveyAvailable] = useState(true);
+  const [surveyAvailable, setSurveyAvailable] = useState(false);
   useEffect(() => {
     if (R.isEmpty(user)) {
       dispatch(push('/login'));
@@ -22,7 +23,7 @@ export default function HomePage() {
     else {
       return (
         <div>
-          <p>Infoaa about burn out</p>
+          <Tips/>
         </div>)
     }
   }
