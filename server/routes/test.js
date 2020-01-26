@@ -35,28 +35,28 @@ router.get('/', (req, res) => {
     user4.password = "password4";
 
     const answer0 = new answerModel();
-    answer0.identity = "uwu";
-    answer0.points = 10;
+    answer0.identity = "Andrew";
+    answer0.points = 420;
     answer0.added_on = Date.now();
 
     const answer1 = new answerModel();
-    answer1.identity = "uwu";
-    answer1.points = 11;
+    answer1.identity = "Sunny";
+    answer1.points = 666;
     answer1.added_on = Date.now();
 
     const answer2 = new answerModel();
-    answer2.identity = "uwu";
-    answer2.points = 12;
+    answer2.identity = "Ahnaf";
+    answer2.points = 120;
     answer2.added_on = Date.now();
 
     const answer3 = new answerModel();
-    answer3.identity = "uwu";
-    answer3.points = 13;
+    answer3.identity = "Kevin";
+    answer3.points = 88;
     answer3.added_on = Date.now();
 
     const answer4 = new answerModel();
-    answer4.identity = "uwu";
-    answer4.points = 14;
+    answer4.identity = "\"Kevin\"";
+    answer4.points = 0;
     answer4.added_on = Date.now();
 
     user0.hashPassword().then(() => {
