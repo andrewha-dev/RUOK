@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { Survey } = require('../database/schemas');
-const { Answer } = require('../database/schemas');
 
 const router = express.Router();
 
