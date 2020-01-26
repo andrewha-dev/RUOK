@@ -6,13 +6,9 @@ export default function TodoSection() {
   return (
     <div className="section todo-section">
       <h1 className="title is-1 has-text-centered">
-        Survey History:
+        Survey History
       </h1>
-      <div className="columns">
-        <div className="column is-8 is-offset-2 text-center">
-          <AddTodo />
-        </div>
-      </div>
+
       <div className="columns">
         <div className="column is-8 is-offset-2 text-left">
           <TodoList />
