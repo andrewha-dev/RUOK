@@ -3,7 +3,6 @@ import './Tips.css';
 const Tips = () => {
         return(
          <div className="TipsContainer">
-         <h3 className="TipsHeaders">Hey, you don't have a survey today!!! </h3> 
                 <p className="TipsHeaders">
                         Here are some tips to avoid stress:
                 </p>
