@@ -13,9 +13,6 @@ export const validateUsername = username => {
   } else if (username.length > 20) {
     message = 'Username must be 20 characters or less';
     valid = false;
-  } else if (R.match(/[a-zA-Z]/g, username).length < 4) {
-    message = 'Username must include at least four letters';
-    valid = false;
   }
   return { valid, message };
 };
