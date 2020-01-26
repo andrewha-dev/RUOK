@@ -3,11 +3,10 @@ const { requireAuth } = require('./middleware');
 const { Survey, Answer } = require('../database/schemas');
 
 const router = express.Router();
-const endpoint = "/survey";
 
 module.exports = router;
 
-router.get(endpoint, requireAuth(), (req, res) => {
+router.get("/", requireAuth, (req, res) => {
     Survey.find({}, (err, questions) => {
         if(err) {
             res.status(400).send({message: "No questions found"});
@@ -18,7 +17,7 @@ router.get(endpoint, requireAuth(), (req, res) => {
     });
 });
 
-router.post(endpoint, requireAuth(), (req, res) => {
+router.post("/", requireAuth, (req, res) => {
     const newAnswer = new Answer(req.body.completedSurvey);
     newAnswer.save(savedAnswer => {
         if(!req.body.identity) {
