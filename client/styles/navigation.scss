@@ -1,8 +1,8 @@
 .navbar {
-  background-color: $mern-primary;
+   background-color:#f5f5f5 ;
 
   &.has-shadow {
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.3);
+
   }
 
   .navbar-brand-right {
@@ -11,7 +11,7 @@
   }
 
   .navbar-end .navbar-item:hover {
-    background: $mern-hover;
+    background: #f5f5f5;
   }
 
   .navbar-item {
@@ -19,7 +19,7 @@
   }
 
   .navbar-item.is-hoverable:hover {
-    background-color: $mern-hover;
+    background-color: #f5f5f5;
   }
 
   .navbar-item .dropdown-caret {
@@ -27,12 +27,12 @@
   }
 
   .navbar-item:not(.button).is-tab:hover {
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid #f5f5f5;
   }
 
   .navbar-item:not(.button).is-tab.is-active {
-    border-bottom: 3px solid $white;
-    color: $white;
+    border-bottom: 3px solid #387F75;
+    color: #387F75;
   }
 
   .navbar-item img {
@@ -57,12 +57,12 @@
   }
 
   .title {
-    color: $white;
+    color: #387F75;
     font-weight: $weight-semibold;
   }
 
   .logo {
-    color: $white;
+    color: #387F75;
     font: initial;
     font-size: 1.5rem;
     font-weight: 800;
@@ -70,7 +70,7 @@
 
   .dropdown {
     .title {
-      color: $black;
+      color: #387F75;
     }
   }
 }

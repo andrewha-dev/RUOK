@@ -13,7 +13,6 @@ export default function Navigation({ pathname }) {
 
   const [auth, setAuth] = useState(!R.isEmpty(user));
   const [open, setOpen] = useState(false);
-
   useEffect(() => {
     setAuth(!R.isEmpty(user));
   }, [user.username]);
@@ -62,7 +61,7 @@ export default function Navigation({ pathname }) {
         <div className="navbar-brand">
           <Link to={auth ? '/home' : '/'} className="navbar-item" aria-label="main navigation">
             <h3 className="title is-3 logo">
-              MERN Boilerplate
+              RUOK
             </h3>
           </Link>
           <div className="navbar-brand-right">
@@ -101,9 +100,9 @@ export default function Navigation({ pathname }) {
                   Home
                 </h6>
               </Link>
-              <Link to="/todo" className={todoItemClasses}>
+              <Link to="/surveyHistory" className={todoItemClasses}>
                 <h6 className="title is-6">
-                  Todo
+                  History
                 </h6>
               </Link>
               <Link to="/settings" className={settingsItemClasses}>

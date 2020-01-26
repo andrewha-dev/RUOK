@@ -1,0 +1,25 @@
+
+
+.TipsContainer{
+    background-color:#98E4D9;
+    padding: 100px;  
+    box-shadow: 1px 3px 4px #98E4D9;
+    margin-top: 100px;
+    border-radius: 5px;
+}
+
+.TipsHeaders{
+    font-size: 24px;
+    color: #387F75;
+    font-family:'Times New Roman', Times, serif
+}
+
+.TipsList{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #387F75;
+}
+
+.TipsUL{
+    margin-top: 10px;
+}
